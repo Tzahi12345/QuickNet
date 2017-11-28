@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="QuickNet.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:QuickNet"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock Text="Network:" TextWrapping="Wrap"/>
+        <ScrollViewer Margin="0,-1,0,0" VerticalAlignment="Top" Height="555" FontFamily="Segoe UI" ViewChanged="ScrollViewer_ViewChanged_2">
+            <Grid x:Name="NetworkLayout" Height="555" VerticalAlignment="Top" Width="1500"/>
+        </ScrollViewer>
+        <TextBlock HorizontalAlignment="Left" Margin="182,649,0,0" Text="Add Layer" TextWrapping="Wrap" VerticalAlignment="Top" Height="78" Width="188" FontSize="36" RenderTransformOrigin="0.557,0.196" SelectionChanged="TextBlock_SelectionChanged"/>
+        <Button Content="Add Layer" HorizontalAlignment="Left" Margin="197,728,0,0" VerticalAlignment="Top" Height="62" Width="138" Click="Button_Click_1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="748,649,0,0" Text="Add Node" TextWrapping="Wrap" VerticalAlignment="Top" Height="78" Width="188" FontSize="36" RenderTransformOrigin="0.557,0.196" SelectionChanged="TextBlock_SelectionChanged"/>
+        <Button Content="Add Node(s)" HorizontalAlignment="Left" Margin="758,727,0,0" VerticalAlignment="Top" Height="62" Width="138" Click="Button_Click"/>
+        <TextBox x:Name="NodeAmount" HorizontalAlignment="Left" Margin="921,762,0,0" Text="0" VerticalAlignment="Top" AcceptsReturn="False" InputScope="Number" PlaceholderText="Enter Amount" Height="27" Width="183"/>
+        <TextBlock HorizontalAlignment="Left" Margin="760,701,0,0" Text="Layer Index" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="75" FontSize="12" RenderTransformOrigin="0.557,0.196" SelectionChanged="TextBlock_SelectionChanged"/>
+        <Canvas HorizontalAlignment="Left" Height="100" Margin="101,-70,0,0" VerticalAlignment="Top" Width="100"/>
+        <ComboBox x:Name="LayerIndex" HorizontalAlignment="Left" Margin="924,719,0,0" VerticalAlignment="Top" Width="179" PlaceholderText="Select Layer"/>
+
+    </Grid>
+    <Page.Resources>
+        <Storyboard x:Name="Storyboard">
+
+            <DoubleAnimation x:Name="WidthAnimation" Storyboard.TargetName="animate"
+                  Storyboard.TargetProperty="Width"
+                  From="0" To="0" Duration="0:0:1" EnableDependentAnimation="True">
+                <DoubleAnimation.EasingFunction>
+                    <BounceEase Bounces="1" EasingMode="EaseOut" 
+                                Bounciness="1" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+            <DoubleAnimation x:Name="HeightAnimation" Storyboard.TargetName="animate"
+                  Storyboard.TargetProperty="Height"
+                  From="0" To="0" Duration="0:0:1" EnableDependentAnimation="True">
+                <DoubleAnimation.EasingFunction>
+                    <BounceEase Bounces="1" EasingMode="EaseOut" 
+                                Bounciness="1" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+
+        </Storyboard>
+    </Page.Resources>
+</Page>
+    
+    
